@@ -93,18 +93,18 @@
                         <p style="color: white;">Pending </p>
                      </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                      <a href="{{ route('approved.user') }}" class="nav-link">
                         <i class="nav-icon far fa-circle" style="color: white;"></i>
                         <p style="color: white;">Approved</p>
                      </a>
-                  </li>
-                  <li class="nav-item">
+                  </li> -->
+                  <!-- <li class="nav-item">
                      <a href="{{ route('user.rejected.transactions') }}" class="nav-link">
                         <i class="nav-icon far fa-circle" style="color: white;"></i>
                         <p style="color: white;">Rejected</p>
                      </a>
-                  </li>
+                  </li> -->
                </ul>
                   </li>
                 <li class="nav-item">
@@ -124,9 +124,6 @@
                   </li>
                </ul>
                   </li>
-                  <br>
-                  <br>
-                  <br>
                   <br>
                   <br>
                   <br>
