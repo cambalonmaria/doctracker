@@ -10,7 +10,7 @@
                 <img src="asset/img/logo-bontoc.png" alt="DSMS Logo" width="200">
                </a>
             </div>
-            @include('layouts.partials.messages')
+            @include('Layouts.partials.messages')
             <div class="card-body" >
                 <label for="floatingName">Email or Username</label>
                   <div class="input-group mb-3">
