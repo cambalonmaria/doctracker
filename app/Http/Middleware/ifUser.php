@@ -18,14 +18,11 @@ class ifUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $select = User::select('type')->where('id', Auth::id())->first();
-        if(!Auth::check()){
-            return(redirect('/login'));
+        $role = UserRole::where('userid', Auth::user()->id)->first();
+        if(Auth::user()&&$role->roleid==1){
+             return $next($request);
         }
-        if ($select->type !== 'user') {
-            abort(403, 'Unauthorized action.');
-        }
-        return $next($request);
+       abort(403);
 }   
 
  

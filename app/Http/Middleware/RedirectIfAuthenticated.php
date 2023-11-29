@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 
-
 class RedirectIfAuthenticated
 {
     /**
@@ -24,12 +23,13 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                $select = User::select('type')->where('id', Auth::id())->first();
-
-                if (Auth::user() && $select->type =='admin'){
-                    return redirect('/admin/dashboard');
-                }elseif(Auth::user() && $select->type =='user'){
-                    return redirect('/user/dashboard');
+                $select = UserRole::where('userid', Auth::id())->first();
+                if (Auth::user() && isset($select->roleid)){    
+                    if ($select->roleid ==0){
+                        return redirect('/admin/dashboard');
+                    }elseif($select->roleid ==1){
+                        return redirect('/user/dashboard');
+                    }
                 }
             }
         }

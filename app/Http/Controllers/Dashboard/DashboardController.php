@@ -10,15 +10,16 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+
 class DashboardController extends Controller
 {
     public function index()
     {
-        // $transactions = Transaction::select('users.name', 'transactions.status','transactions.transaction_code','transactions.id')
-        // ->join('users', 'users.id', '=', 'transactions.from_id')
-        // ->where('status', '=', 'rejected')
-        // ->where('notif', 0)
-        // ->get();
+        $transactions = Transaction::select('users.name', 'transactions.status','transactions.transaction_code','transactions.id')
+        ->join('users', 'users.id', '=', 'transactions.from_id')
+        ->where('status', '=', 'rejected')
+        ->where('notif', 0)
+        ->get();
 
         
 

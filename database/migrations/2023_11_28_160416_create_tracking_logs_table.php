@@ -8,24 +8,29 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('tracking_logs', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->integer('transaction_id');
-            $table->integer('user');
+            $table->integer('from_id');
+            $table->integer('to_id')->nullable();
             $table->string('title');
             $table->string('short_description');
             $table->string('department');
-            $table->timestamps();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('tracking_logs');
     }

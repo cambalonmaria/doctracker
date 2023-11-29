@@ -8,22 +8,26 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('user_roles', function (Blueprint $table) {
-            $table->id()->autoincrement();
+            $table->bigIncrements('id');
             $table->integer('userid');
             $table->integer('roleid');
-            $table->string('role_name');
+            $table->string('role_name', 100);
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('user_roles');
     }
