@@ -16,7 +16,7 @@
             </div>
          </div>
       </div>
-   @include('layouts.partials.messages')
+   @include('Layouts.partials.messages')
       <div class="row card p-5 m-4" style="background-color: white;">
         <div class="row-col-6">
             <div class="table-responsive" style="height: 460px;">

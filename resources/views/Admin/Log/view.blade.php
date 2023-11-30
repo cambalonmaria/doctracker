@@ -27,7 +27,7 @@
       </div>
 
          <div class="container">
-             @include('layouts.partials.messages')
+             @include('Layouts.partials.messages')
       <div class="row card p-5" style="background-color: white;">
             <article class="card">
                 <header class="card-header">  <strong> MY TRACKING </strong> </header>

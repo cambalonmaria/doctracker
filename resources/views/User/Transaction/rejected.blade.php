@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        @include('layouts.partials.messages')
+        @include('Layouts.partials.messages')
         <div class="row card p-5 mt-5" style="background-color: white;">
 
             <div class="col-md-12">

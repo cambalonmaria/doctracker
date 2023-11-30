@@ -15,7 +15,7 @@
             </div>
          </div>
       </div>
-           @include('layouts.partials.messages')
+           @include('Layouts.partials.messages')
       <div class="row card p-5" style="background-color: white;">
          <form action="{{ route('user.store.transaction') }}"  method="post">
             @csrf

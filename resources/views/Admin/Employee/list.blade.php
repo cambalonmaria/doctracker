@@ -15,7 +15,7 @@
             </div>
          </div>
       </div>
-       @include('layouts.partials.messages')
+       @include('Layouts.partials.messages')
       <div class="row card p-5">
             <div class="col-md-12">
                <div class="card-header">
