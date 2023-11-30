@@ -58,9 +58,10 @@
                                 <label> Destination</label>
                                 <select name="destination" class="form-control">
                                   <option value="" readonly>Select Destination</option>
-                                 @foreach ($users as $user)
-                                     <option value="{{ $user->id }}">{{ $user->name }} | {{ $user->department }} | {{ $user->position }}</option> 
+                                  @foreach ($users as $user)
+                                     <option value="{{ $user->id }}">{{ $user->name }}</option> 
                                   @endforeach
+                                  
                                 </select>
                               </div>
                            </div>

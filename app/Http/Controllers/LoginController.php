@@ -39,7 +39,7 @@ class LoginController extends Controller
             $role = UserRole::where('userid',Auth::user()->id)->first();
             if (Auth::user() && $role->roleid==0){
                  return redirect('/admin');
-            }elseif(Auth::user() && $role->roleid==2){
+            }elseif(Auth::user() && $role->roleid==1){
                  return redirect('/user');
             }
         }
