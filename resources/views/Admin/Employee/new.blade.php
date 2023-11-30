@@ -1,4 +1,4 @@
- @extends('layouts.default')
+ @extends('Layouts.default')
 
 @section('content')
 <div class="content-header">

@@ -1,4 +1,4 @@
-@extends('layouts.user.default')
+@extends('Layouts.user.default')
 
 @section('content')
 <style>

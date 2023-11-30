@@ -1,4 +1,4 @@
-   @extends('layouts.default')
+   @extends('Layouts.default')
 
 @section('content')
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
