@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User_role; // Don't forget to import the User_role model if you haven't already
 use Exception;
+use App\Models\UserRole;
 
 class RegisterController extends Controller
 {
@@ -34,7 +35,7 @@ class RegisterController extends Controller
             'position' => $request->position,
             'name' => $request->name,
             'email' => $request->email,
-           'password' => Hash::make($request->password),
+            'password' => Hash::make($request->password),
             'updated_at' => Carbon::now(),
             'department' =>$request->department,
             'type' => 'user'
@@ -42,11 +43,21 @@ class RegisterController extends Controller
 
         try{
             User::insert($data);
+
+            $user = User::orderby('id', 'desc')->first();
+            // Pag-create og record sa user_role table
+            $saveUserRole = new UserRole;
+            $saveUserRole->userid =  $user->id;
+            $saveUserRole->roleid = 1;
+            $saveUserRole->role_name ="user";
+            $saveUserRole->save();
+
             return response()->json([
                 'status_code' => 1
             ]);
         }
         catch(Exception $e){
+            return $e;
             return response()->json([
                 'status_code' => 0
             ]);
