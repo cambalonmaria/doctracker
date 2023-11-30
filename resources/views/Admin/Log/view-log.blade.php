@@ -32,7 +32,7 @@
                             @else
                                 <span>Tosss: {{ $transaction->department }}</span>
                             @endif
-                        </div>
+                        </div> 
                     </div>
                 @endforeach
             </div>
