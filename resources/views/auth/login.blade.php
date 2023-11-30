@@ -1,4 +1,4 @@
- @extends('layouts.auth')
+ @extends('Layouts.auth')
 
 @section('content')
     <form method="post" id="submitForm" action="{{ route('login.perform') }}">
