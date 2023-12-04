@@ -84,6 +84,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function() {
     Route::get('/list/edit/{id}', 'ListController@editlist')->name('list.edit');
     Route::post('/list/edit/update', 'ListController@updatelist')->name('list.edit.update');   
     Route::get('/list/delete/{id}', 'ListController@deletelist')->name('list.delete');
+    Route::post('/list/edit/delete', 'ListController@updatelist')->name('list.edit.delete');   
 
     Route::get('/transactionLogs/{id}', 'LogController@adminViewLog')->name('view.log');
     Route::post('/searchTransaction', 'LogController@searchTransaction')->name('admin.search.transaction');

@@ -1,4 +1,4 @@
-@extends('Layouts.user.default')
+@extends('Layouts.User.default')
 
 @section('content')
 <div class="content-header">

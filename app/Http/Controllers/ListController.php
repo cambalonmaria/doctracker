@@ -28,8 +28,12 @@ class ListController extends Controller
 
         $Deletesave=Employee::where('id',$request->id)->first();
      
-        if($Deletesave->delete()) { 
-            return redirect()->back()->withErrors('Deleted!');
+         $employee = Employee::findOrFail($request->id);
+
+        if ($employee->delete()) {
+            return redirect()->back()->with('success', 'Record deleted successfully!');
+        } else {
+            return redirect()->back()->withErrors('Failed to delete the record.');
         }
     }
      public function updatelist(Request $request){
