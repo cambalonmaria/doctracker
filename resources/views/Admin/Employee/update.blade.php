@@ -53,17 +53,24 @@
                                 <label> Department </label>
                                 <select class="form-control" name="department" id="department">
                                  <option value="{{ $employee->position }}">{{ $employee->department }}</option>
-                                 <option value="Sangguniang Bayan Office">Sangguniang Bayan Office</option>
-                                 <option value="Municipal Planning & Development Office">Municipal Planning & Development Office</option>
-                                 <option value="Municipal Local Civil Registrar">Municipal Local Civil Registrar</option>
-                                 <option value="Municipal Budget Office">Municipal Budget Office</option>
-                                 <option value="Municipal Accounting Office">Municipal Accounting Office</option>
-                                 <option value="Municipal Treasurer Office">Municipal Treasurer Office</option>
-                                 <option value="Municipal Assessor's Office">Municipal Assessor's Office</option>
-                                 <option value="Municipal Health Office">Municipal Health Office</option>
-                                 <option value="Municipal Social Welfare & Development Office">Municipal Social Welfare & Development Office</option>
-                                 <option value="Municipal Agriculture Office">Municipal Agriculture Office</option>
-                                 <option value="Municipal Engineering Office">Municipal Engineering Office</option>
+                                 <option value="OFFICE OF THE MUNICIPAL MAYOR">OFFICE OF THE MUNICIPAL MAYOR</option>
+                                  <option value="OFFICE OF THE SANGGUNIANG BAYAN">OFFICE OF THE SANGGUNIANG BAYAN</option>
+                                  <option value="MUNICIPAL PLANNING AND DEVELOPMENT OFFICE">MUNICIPAL PLANNING AND DEVELOPMENT OFFICE</option>
+                                  <option value="MUNICIPAL ENGINEERING OFFICE">MUNICIPAL ENGINEERING OFFICE</option>
+                                  <option value="BIDS AWARDS COMMITTE">BIDS AWARDS COMMITTE</option>
+                                  <option value="MMUNICIPAL ACCOUNTING OFFICE">MUNICIPAL ACCOUNTING OFFICE</option>
+                                  <option value="HUMAN RESOURCE MANAGEMENT OFFICE">HUMAN RESOURCE MANAGEMENT OFFICE</option>
+                                  <option value="MMUNICIPAL BUDGET OFFICE">MUNICIPAL BUDGET OFFICE</option>
+                                  <option value="MUNICIPAL AGRICULTURE & SERVICES OFFICE">MUNICIPAL AGRICULTURE & SERVICES OFFICE</option>
+                                  <option value="MUNICIPAL SOCIAL WELFARE OFFICE">MUNICIPAL SOCIAL WELFARE OFFICE</option>
+                                  <option value="MUNICIPAL TREASURER'S OFFICE">MUNICIPAL TREASURER'S OFFICE</option>
+                                  <option value="MUNICIPAL ASSESSOR'S OFFICE">MUNICIPAL ASSESSOR'S OFFICE</option>
+                                  <option value="MUNICIPAL CIVIL REGISTRAR'S OFFICE">MUNICIPAL CIVIL REGISTRAR'S OFFICE</option>
+                                  <option value="MMUNICIPAL HEALTH OFFICE">MUNICIPAL HEALTH OFFICE</option>
+                                  <option value="GENERAL SERVICES OFFICE">GENERAL SERVICES OFFICE</option>
+                                  <option value="MUNICIPAL TOURISM OFFICE">MUNICIPAL TOURISM OFFICE</option>
+                                  <option value="MUNICIPAL DISASTER RISK REDUCTION MANAGEMENT OFFICE">MUNICIPAL DISASTER RISK REDUCTION MANAGEMENT OFFICE</option>
+                                  <option value="SENIOR CITIZEN OFFICE">SENIOR CITIZEN OFFICE</option>
                                 </select>
                              
                               </div>

@@ -82,6 +82,11 @@
                                                         <td style="text-align: center"><input type="checkbox" name=""
                                                                 class="form-check-control approve-checbox"
                                                                 sid='{{ $transaction->t_id }}'></td>
+                                                         <td>
+                                                            <button class="btn btn-sm btn-success btn-done"
+                                                                sid="{{ $transaction->t_id }}"
+                                                                from-id="{{ $transaction->from_id }}">Done</button>
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -111,7 +116,7 @@
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}" des-name="{{ $user->name }}"
                                         des-pos="{{ $user->position }}" des-dept="{{ $user->department }}">
-                                        {{ $user->name }} | {{ $user->position }} | {{ $user->department }}</option>
+                                        {{ $user->name }} | {{ $user->department }}</option>
                                 @endforeach
                             </select>
                             <label for="" class="mt-2">Optional: </label>
@@ -267,5 +272,55 @@
                     $('#exampleModal').modal('toggle');
 
                 });
+
+            
+
+                $('.btn-done').click(function (e) { 
+                    e.preventDefault();
+
+                    let transaction_id = $(this).attr('sid');
+                    let from_id = $(this).attr('from-id');
+                    let el = this;
+
+                    Swal.fire({
+                    text: "Is this the last destination of this process?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, finalize it!"
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ route('admin.done.transaction') }}",
+                            data: {
+                                '_token': "{{ csrf_token() }}",
+                                'transaction_id': transaction_id,
+                                'from_id': from_id
+                            },
+                            dataType: "json",
+                            success: function (response) {
+                                if(response.status_code == 1){
+                                    $(el).closest('.table-row').fadeOut(300, function() {
+                                        $(this).remove()
+                                    })
+                                 
+                                }else{
+                                    Swal.fire({
+                                        title: "Error!",
+                                        text: "There was an error during the process.",
+                                        icon: "error"
+                                    });
+                                }
+                            }
+                        });
+                     
+                    }
+                    });
+                                        
+                   
+                });
+
             </script>
         @endsection

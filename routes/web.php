@@ -82,9 +82,13 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function() {
 
 //EMPLOYEE EDIT DELETE
     Route::get('/list/edit/{id}', 'ListController@editlist')->name('list.edit');
-    Route::post('/list/edit/update', 'ListController@updatelist')->name('list.edit.update');   
-    Route::get('/list/delete/{id}', 'ListController@deletelist')->name('list.delete');
-    Route::post('/list/edit/delete', 'ListController@updatelist')->name('list.edit.delete');   
+    Route::post('/list/edit/update', 'ListController@updatelist')->name('list.edit.update');  
+    Route::get('/lists/delete/{id}', 'ListsController@deletelist')->name('list.delete');
+    Route::post('/lists/delete', 'ListsController@deletelist')->name('list.edit.delete');
+
+ 
+    // Route::get('/list/edit/delete/{id}', 'ListController@deletelist')->name('list.edit.delete');
+    
 
     Route::get('/transactionLogs/{id}', 'LogController@adminViewLog')->name('view.log');
     Route::post('/searchTransaction', 'LogController@searchTransaction')->name('admin.search.transaction');
@@ -98,6 +102,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function() {
 
     Route::get('/viewApproved', 'ApprovedController@viewApproved')->name('admin.view.approved');
     Route::get('/viewRejected', 'RejectedController@viewRejected')->name('admin.view.rejected');
+
     
 
 #USERS
@@ -150,8 +155,10 @@ Route::group(['middleware' => ['admin'],'prefix' => 'admin'], function() {
     Route::get('transactionLogs/{id}', $controller_path. '\LogController@adminViewLog')->name('admin.view.log');
 
 
-    Route::post('approveTransaction', $controller_path . '\PendingController@approve')->name('admin.approveTransaction');
+    Route::post('approveTransaction', $controller_path . '\PendingController@approveTransaction')->name('admin.approveTransaction');
     Route::post('rejectTransaction', $controller_path. '\RejectedController@rejectTransaction')->name('admin.reject.transaction');
+     Route::post('doneTransaction', $controller_path. '
+        \PendingController@doneTransaction')->name('admin.done.transaction');
     Route::post('notification', $controller_path. '\Dashboard\DashboardController@notification')->name('admin.notification');
 
 });  

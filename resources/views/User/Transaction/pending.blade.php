@@ -116,7 +116,7 @@
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}" des-name="{{ $user->name }}"
                                         des-pos="{{ $user->position }}" des-dept="{{ $user->department }}">
-                                        {{ $user->name }} | {{ $user->position }} | {{ $user->department }}</option>
+                                        {{ $user->name }} | {{ $user->department }}</option>
                                 @endforeach
                             </select>
                             <label for="" class="mt-2">Optional: </label>

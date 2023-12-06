@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Hash;
 
 class ListController extends Controller
 {
-	 public function editlist($id){
-	 	$employees=User::where('id',$id)->first();
+     public function editlist($id){
+        $employees=User::where('id',$id)->first();
 
         return view('Admin.Employee.update',[
               'employee'=>$employees
@@ -51,4 +51,3 @@ class ListController extends Controller
         }
     }
 }
-

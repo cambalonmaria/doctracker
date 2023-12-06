@@ -83,6 +83,37 @@ class PendingController extends Controller
       
         return view('Admin.Transaction.pending', compact('transactions', 'users'));
     }
+     public function doneTransaction(Request $request){
+      $id = $request->transaction_id;
+      $from_id = $request->from_id;
+
+
+      try{
+        Transaction::where('id', $id)->update(array(
+          'status' => 'done'
+        ));
+
+        TrackingLog::insert(array(
+          'transaction_id' => $id,
+          'from_id' => $from_id,
+          'title' => 'Finalized Transaction',
+          'short_description' => Str::title(Auth::user()->name). ' finalized the transaction.',
+          'department' => Auth::user()->department,
+          'updated_at' => Carbon::now()
+        ));
+
+        return response()->json([
+          'status_code' => 1
+        ]);
+        
+      }
+      catch(Exception $e){
+        return response()->json([
+          'status_code' => 0
+        ]);
+      }
+    }
+
     
 
     public function approveTransaction(Request $request){

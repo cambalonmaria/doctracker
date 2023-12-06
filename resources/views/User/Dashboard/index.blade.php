@@ -18,6 +18,7 @@
                              <tr>
                                 <th>Transaction Code</th>
                                 <th>Status</th>
+                                
                              </tr>
                              @foreach($notif_transactions as $transaction)
                                 <tr>

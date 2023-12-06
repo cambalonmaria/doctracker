@@ -59,7 +59,7 @@
                                 <select name="destination" class="form-control">
                                   <option value="" readonly>Select Destination</option>
                                   @foreach ($users as $user)
-                                     <option value="{{ $user->id }}">{{ $user->name }} | {{ $user->department }} | {{ $user->position }}</option> 
+                                     <option value="{{ $user->id }}">{{ $user->name }} | {{ $user->department }} </option> 
                                   @endforeach
                                   
                                 </select>

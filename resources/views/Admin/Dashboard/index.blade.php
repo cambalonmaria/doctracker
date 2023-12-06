@@ -19,6 +19,7 @@
                            <tr>
                               <th>Transaction Code</th>
                               <th>Status</th>
+                              
                            </tr>
                            @foreach($notif_transactions as $transaction)
                               <tr>
@@ -100,6 +101,8 @@
                   <th>Created By</th>
                   <th>Status</th>
                   <th>Create at</th>
+
+
                </tr>
               @foreach ($transactions as $transaction)
                  <tr>
