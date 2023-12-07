@@ -8,7 +8,6 @@
     <meta name="generator" content="Hugo 0.87.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Signin Template · Bootstrap v5.1</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{!! url('assets/bootstrap/css/bootstrap.min.css') !!}" rel="stylesheet">
@@ -42,9 +41,8 @@
         <form method="post" action="http://docutrack.test/register">
 
         <input type="hidden" name="_token" value="TKI7O0azbW0Wd07BLN7OaKVpuKTjAsl9ek2uSe5Z">
-        <img class="mb-4" src="http://docutrack.test/images/bootstrap-logo.svg" alt="" width="72" height="57">
         
-        <h1 class="h3 mb-3 fw-normal">Register</h1>
+        <h1>Register</h1>
 
         <div class="form-group form-floating mb-3">
             <input type="email" class="form-control" name="email" value="" placeholder="name@example.com" required="required" autofocus="">
@@ -68,7 +66,7 @@
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
         
-        <p class="mt-5 mb-3 text-muted">© 2023</p>    </form>
+        </form>
        
     </main>
     

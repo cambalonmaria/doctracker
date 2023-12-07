@@ -12,13 +12,14 @@
       <link rel="stylesheet" href="asset/fontawesome/css/all.min.css">
       <!-- Theme style -->
       <link rel="stylesheet" href="asset/css/adminlte.min.css">
+      <link rel="icon" href="asset/img/logo-bontoc.png">
       <meta name="csrf-token" content="{{ csrf_token() }}">
-   </head>
+   </head><br><br><br>
    
-   <h1 style="color: #FFFFFF; text-shadow: #D4AF37;" > <B>Document Tracking System </B></h1>
+   <h3 style="color: #FFFFFF; text-shadow: #D4AF37;" >Document Tracking System</h3>
    
    <br>
-   <body class="hold-transition login-page" style="background-color: teal;">
+   <body class="hold-transition login-page" style="background-color: green;">
       <div class="login-box"  style="color: #8E7618;">  
          <!-- /.login-logo -->
           @yield('content')

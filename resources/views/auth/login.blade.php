@@ -7,7 +7,7 @@
          <div class="card card-outline card-info">
             <div class="card-header text-center">
                <a href="index.html" class="brand-link">
-                <img src="asset/img/logo-bontoc.png" alt="DSMS Logo" width="200">
+                <img src="asset/img/logo-bontoc.png" alt="DSMS Logo" width="30%">
                </a>
             </div>
             @include('Layouts.partials.messages')
@@ -31,14 +31,15 @@
                   <div class="row">
                      <div class="col-6 offset-lg-3">
                         <center>
-                         <button type="submit" class="btn btn-info btn-block" style="background-color: #aa8800;" style="color: white">Login</button>
+                         <button type="submit" class="btn btn-light btn-block" style="background-color: #aa8800;" style="color: white">Login</button>
                          <!-- <button type="submit" class="btn btn-info btn-block" style="background-color: #aa8800;" style="color: White ">Sign Up</button> -->
                      </div>
+                     <br><br>
                   </div>
                   <div class="row">
                      <div class="col-6 offset-lg-3">
                         <center>
-                        <a href="/register"> <button type="button" class="btn btn-info btn-block" style="background-color: #aa8800;" style="color: white">Register Employee</button></a>
+                        <a href="/register"> <button type="button" class="btn btn-light btn-block" style="background-color: #aa8800;" style="color: white">Register Employee</button></a>
                          <!-- <button type="submit" class="btn btn-info btn-block" style="background-color: #aa8800;" style="color: White ">Sign Up</button> -->
                      </div>
                   </div>

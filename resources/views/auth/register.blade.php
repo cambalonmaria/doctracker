@@ -1,16 +1,16 @@
 @extends('Layouts.auth')
 
 @section('content')
-<div class="card col-sm-12">
-    <form method="post" id="form-register">
+<!-- <div class="container bg-success">
+ -->    <form method="post" id="form-register">
   
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-        <img class="mb-4" src="{!! url('images/bootstrap-logo.svg') !!}" alt="" width="72" height="57">
+        <img class="mb-4" src="asset/img/logo-bontoc.png" alt="" width="50%" height="50%">
         
-        <h1 class="h3 mb-3 fw-normal">Register</h1>
+        <h1 style="color:white; text-align: center;">Register</h1>
        
         <div class="form-group form-floating mb-3">
-            <label for="floatingEmail">Department</label>
+            <label for="floatingEmail" class="text-light" >Department</label>
             <select name="department" id="" class="form-control mb-3">
                 <option value="OFFICE OF THE MUNICIPAL MAYOR">OFFICE OF THE MUNICIPAL MAYOR</option>
                 <option value="OFFICE OF THE SANGGUNIANG BAYAN">OFFICE OF THE SANGGUNIANG BAYAN</option>
@@ -35,12 +35,12 @@
         
 
         <div class="form-group form-floating mb-3">
-            <label for="floatingEmail">Position</label>
+            <label for="floatingEmail" class="text-light" >Position</label>
             <input type="text" class="form-control" name="position" placeholder="HR" required="required" autofocus>
         </div>
 
         <div class="form-group form-floating mb-3">
-            <label for="floatingEmail">Email address</label>
+            <label for="floatingEmail" class="text-light">Email address</label>
             <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
             @if ($errors->has('email'))
                 <span class="text-danger text-left">{{ $errors->first('email') }}</span>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-group form-floating mb-3">
-            <label for="floatingName">Name</label>
+            <label for="floatingName" class="text-light" >Name</label>
             <input type="text" class="form-control" name="name" value="{{ old('username') }}" placeholder="Name" required="required" autofocus>
             @if ($errors->has('username'))
                 <span class="text-danger text-left">{{ $errors->first('username') }}</span>
@@ -56,12 +56,12 @@
         </div>
         
         <div class="form-group form-floating mb-3">
-            <label for="floatingPassword">Password</label>
+            <label for="floatingPassword" class="text-light" >Password</label>
             <input type="password" class="form-control" name="password" id="password" placeholder="Password" required="required">
         </div>
 
         <div class="form-group form-floating mb-3">
-             <label for="floatingConfirmPassword">Confirm Password</label>
+             <label for="floatingConfirmPassword" class="text-light" >Confirm Password</label>
             <input type="password" class="form-control" name="password_confirmation" id="confirm-password"  placeholder="Confirm Password" required="required">
             <span style="color:tomato; display:none" id="error-pass">Password does not match</span>
         </div>
