@@ -105,22 +105,22 @@
                      </a>
                   </li>
                </ul>
-               <!-- <ul class="nav nav-treeview">
+               <ul class="nav nav-treeview">
                   <li class="nav-item">
                      <a href="{{ route('admin.view.approved') }}" class="nav-link">
                         <i class="nav-icon far fa-circle" style="color: white;"></i>
                         <p style="color: white;"> Approved </p>
                      </a>
                   </li>
-               </ul> -->
-               <!-- <ul class="nav nav-treeview">
+               </ul>
+               <ul class="nav nav-treeview">
                   <li class="nav-item">
                      <a href="{{ route('admin.rejected.transactions') }}" class="nav-link">
                         <i class="nav-icon far fa-circle" style="color: white;"></i>
                         <p style="color: white;"> Rejected </p>
                      </a>
                   </li>
-               </ul> -->
+               </ul>
                   </li>
                   <li class="nav-item">
                      <a href="#" class="nav-link">
