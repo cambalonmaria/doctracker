@@ -104,7 +104,7 @@
 
 
                </tr>
-              @foreach ($transactions as $transaction)
+             <!--  @foreach ($transactions as $transaction) -->
                  <tr>
                   <td>{{ $transaction->transaction_code }}</td>
                   <td>{{ $transaction->u_department }}</td>
@@ -119,7 +119,7 @@
                   >{{ Str::title($transaction->status) }} </td>
                   <td>{{ Illuminate\Support\Carbon::parse($transaction->create_at)->format('F d, Y') }}</td>
                  </tr>
-              @endforeach
+              <!-- @endforeach -->
             </table>
          </div>
        </div>

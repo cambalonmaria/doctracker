@@ -1,4 +1,4 @@
-@extends('Layouts.User.default')
+@extends('layouts.user.default')
 
 @section('content')
 <style>
@@ -18,7 +18,6 @@
                              <tr>
                                 <th>Transaction Code</th>
                                 <th>Status</th>
-                                
                              </tr>
                              @foreach($notif_transactions as $transaction)
                                 <tr>
@@ -49,7 +48,11 @@
                                         <h2>{{ $pending }}</h2>
                                     </span>
                                 </div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">View</button>
+                                </div>
                             </div>
+                            
                         </div>
 
                     </div>
@@ -57,6 +60,53 @@
             </section>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Transactions</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="table-responsive" style="height: 300px">
+                 <table class="table text-center">
+                    <tr>
+                       <th>Transaction Code</th>
+                       <th>Created By</th>
+                       <th>Status</th>
+                       <th>Create at</th>
+                    </tr>
+                    @foreach ($transactions as $transaction)
+                    <tr>
+                     <td>{{ $transaction->transaction_code }}</td>
+                     <td>{{ $transaction->u_department }}</td>
+                     <td
+                     @if ($transaction->status == 'rejected')
+                           style= 'color: tomato'
+                     @elseif ($transaction->status == 'done')
+                           style='color: green'
+                     @elseif ($transaction->status == 'pending')
+                     style='color: skyblue'
+                     @endif
+                     >{{ Str::title($transaction->status) }} </td>
+                     <td>{{ Illuminate\Support\Carbon::parse($transaction->create_at)->format('F d, Y') }}</td>
+                    </tr>
+                 @endforeach
+                 </table>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
    

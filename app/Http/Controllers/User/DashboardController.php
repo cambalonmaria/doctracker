@@ -25,9 +25,15 @@ class DashboardController extends Controller
         ->orwhere('destination', Auth::id())
         ->orwhere('created_id', Auth::id())
         ->get();
+
+        $transactions = Transaction::select('transactions.*', 'users.department as u_department')
+        ->join('users', 'users.id','=','transactions.created_id')
+        ->where('transactions.destination', Auth::id())
+        ->get();
+        ;
         
         $notif = Transaction::select('notif')->where('notif', 1)->where('created_id', Auth::id())->where('destination', Auth::id())->get();
-        return view('User.Dashboard.index', compact('pending', 'approved','rejected','notif_transactions','notif'));    
+        return view('User.Dashboard.index', compact('transactions','pending', 'approved','rejected','notif_transactions','notif'));    
     }
 
     public function notification(Request $request){

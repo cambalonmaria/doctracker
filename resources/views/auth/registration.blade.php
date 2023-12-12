@@ -5,7 +5,11 @@
     <form method="post" action="{{ route('registration.perform') }}">
   
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-        <img class="mb-4" src="{!! url('images/bootstrap-logo.svg') !!}" alt="" width="72" height="57">
+       
+        <div class="text-center">
+             <img class="mb-4 mx-auto d-block" src="{!! url('images/bootstrap-logo.svg') !!}" alt="" width="100" height="100">
+        </div>
+
         
         <h1 class="h3 mb-3 fw-normal">Register</h1>
 

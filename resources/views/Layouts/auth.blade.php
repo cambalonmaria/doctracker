@@ -15,11 +15,11 @@
       <link rel="icon" href="asset/img/logo-bontoc.png">
       <meta name="csrf-token" content="{{ csrf_token() }}">
    </head><br><br><br>
-   
-   <h3 style="color: #FFFFFF; text-shadow: #D4AF37;" >Document Tracking System</h3>
-   
+   <center>
+   <h2 style=" font-style: italic; color: #FFFFFF; text-shadow: #D4AF37;" >Document Tracking System in the Municipality of Bontoc</h2>
+   </center>
    <br>
-   <body class="hold-transition login-page" style="background-color: green;">
+   <body class="hold-transition login-page" style="background-color: teal;">
       <div class="login-box"  style="color: #8E7618;">  
          <!-- /.login-logo -->
           @yield('content')
