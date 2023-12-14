@@ -17,7 +17,7 @@
       </div>
       <div class="row card p-5" style="background-color: white;">
           @include('Layouts.partials.messages')
-         <form action="{{ route('list.edit.delete') }}"  method="post">
+         <form action="{{ route('list.delete') }}"  method="post">
             @csrf
             <div class="col-md-12">
                <div class="card-header"></div>

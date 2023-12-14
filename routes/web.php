@@ -83,11 +83,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function() {
 //EMPLOYEE EDIT DELETE
     Route::get('/list/edit/{id}', 'ListController@editlist')->name('list.edit');
     Route::post('/list/edit/update', 'ListController@updatelist')->name('list.edit.update');  
-    Route::get('/lists/delete/{id}', 'ListsController@deletelist')->name('list.delete');
-    Route::post('/lists/delete', 'ListsController@deletelist')->name('list.edit.delete');
-
- 
-    // Route::get('/list/edit/delete/{id}', 'ListController@deletelist')->name('list.edit.delete');
+    Route::get('/list/delete/{id}', 'ListController@removelist')->name('list.delete');
     
 
     Route::get('/transactionLogs/{id}', 'LogController@adminViewLog')->name('view.log');

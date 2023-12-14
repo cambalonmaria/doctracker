@@ -20,17 +20,11 @@ class ListController extends Controller
     }
     public function listemployee(){
         $employees = User::select('*')->get();
-
-        
         return view('Admin.Employee.list',compact('employees'));
     }
-     public function deletelist(Request $request){
-
-        $Deletesave=Employee::where('id',$request->id)->first();
-     
-         $employee = Employee::findOrFail($request->id);
-
-        if ($employee->delete()) {
+     public function removelist(Request $request){
+        $deleteemp= User::where('id',$request->id)->first();
+        if ($deleteemp->delete()) {
             return redirect()->back()->with('success', 'Record deleted successfully!');
         } else {
             return redirect()->back()->withErrors('Failed to delete the record.');

@@ -19,10 +19,12 @@ class ifUser
     public function handle(Request $request, Closure $next): Response
     {
         
-        $role = UserRole::where('userid', Auth::user()->id)->first();
-        if(Auth::user()&&$role->roleid==1){
-             return $next($request);
-        }
+        if(Auth::user()){
+            $role = UserRole::where('userid', Auth::user()->id)->first();
+            if($role->roleid==1){
+                 return $next($request);
+            }
+       }
        abort(403);
 }   
 

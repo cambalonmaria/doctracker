@@ -63,10 +63,8 @@
                               <td class="text-center">
                                  <a class="btn btn-sm btn-success" href="{{ url('admin/list/edit/').'/'.$employee->id }}"><i
                                        class="fa fa-edit"></i> Update</a>
-                                <a class="btn btn-sm btn-danger" href="{{ url('list/edit/delete/').'/'.$employee->id }}"><i
+                                <a class="btn btn-sm btn-danger" href="{{ url('admin/list/delete/').'/'.$employee->id }}"><i
                                        class="fa fa-delete"></i> Delete</a>
-                                       {{method_field('DELETE')}}
-                                        @csrf
                               </td>
 
                               
