@@ -19,6 +19,7 @@ class DashboardController extends Controller
         $pending = Transaction::select('id')->where('status','pending')->where('created_id',Auth::id())->count();
         $rejected = Transaction::select('id')->where('status','rejected')->where('destination',Auth::id())->count();
         $approved = Approved::select('id')->where('from_id', Auth::id())->count();
+        
         $notif_transactions = Transaction::select('transactions.*','tl.short_description')
         ->join('tracking_logs as tl','tl.transaction_id','=', 'transactions.id')
         ->where('tl.from_id', '!=', Auth::id())
@@ -31,9 +32,16 @@ class DashboardController extends Controller
         ->where('transactions.destination', Auth::id())
         ->get();
         
-        
         $notif = Transaction::select('notif')->where('notif', 1)->where('created_id', Auth::id())->where('destination', Auth::id())->get();
-        return view('User.Dashboard.index', compact('transactions','pending', 'approved','rejected','notif_transactions','notif'));    
+
+        return view('User.Dashboard.index',[
+            'transactions' => $transactions,
+            'pending' => $pending,
+            'approved' => $approved,
+            'rejected' => $rejected,
+            'notif_transactions'=> $notif_transactions,
+            'notif' => $notif
+        ]);    
     }
 
     public function notification(Request $request){

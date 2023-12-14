@@ -94,7 +94,7 @@
                      >{{ Str::title($transaction->status) }} </td>
                      <td>{{ Illuminate\Support\Carbon::parse($transaction->create_at)->format('F d, Y') }}</td>
                     </tr>
-                 @endforeach
+                    @endforeach
                  </table>
               </div>
             </div>
